@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrashTrack - Sign In</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .signin-container {
+      max-width: 350px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+    .signin-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    .signin-container button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TrashTrack</h1>
+  </header>
+
+  <main>
+    <div class="signin-container">
+      <h2>Sign In</h2>
+      <form id="signinForm">
+        <input type="text" id="name" placeholder="Full Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("signinForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      if (name && email) {
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+
+        window.location.href = "index.html";
+      } else {
+        alert("Please enter valid details!");
+      }
+    });
+  </script>
+</body>
+</html>

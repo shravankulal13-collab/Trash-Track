@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrashTrack - Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .profile-container img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .profile-info {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .logout-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: crimson;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TrashTrack</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report.html">Report</a>
+      <a href="status.html">Status</a>
+      <a href="track.html">Track</a>
+      <a href="history.html">History</a>
+      <a href="confirmation.html">Confirmation</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="profile-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile Icon">
+      <h2 id="welcomeText">Welcome!</h2>
+      <div class="profile-info">
+        <p><strong>Name:</strong> <span id="profileName">Guest</span></p>
+        <p><strong>Email:</strong> <span id="profileEmail">guest@example.com</span></p>
+        <p><strong>Joined:</strong> January 2025</p>
+      </div>
+      <button class="logout-btn" id="logoutBtn">Log Out</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TrashTrack</p>
+  </footer>
+
+  <script>
+    const userName = localStorage.getItem("userName") || "Guest";
+    const userEmail = localStorage.getItem("userEmail") || "guest@example.com";
+
+    document.getElementById("welcomeText").textContent = `Welcome, ${userName}!`;
+    document.getElementById("profileName").textContent = userName;
+    document.getElementById("profileEmail").textContent = userEmail;
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

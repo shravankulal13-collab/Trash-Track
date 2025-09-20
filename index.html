@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrashTrack - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .user-section {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .sign-in-btn {
+      padding: 8px 15px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TrashTrack</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report.html">Report</a>
+      <a href="status.html">Status</a>
+      <a href="track.html">Track</a>
+      <a href="history.html">History</a>
+      <a href="confirmation.html">Confirmation</a>
+    </nav>
+    <div class="user-section" id="userSection">
+      <button class="sign-in-btn" onclick="signIn()">Sign In</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Welcome to TrashTrack! Garbage management made easy..</h2>
+    <p>Report, Track and Confirm garbage pickup easily!</p>
+    <img src="https://img-cdn.publive.online/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2025/05/Blue-and-Yellow-Modern-Business-Workshop-Facebook-Ad-2025-05-21T094915.138_11zon-1747801295.jpg" alt="Garbage Truck">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2025/1/482073013/JP/SY/LC/5073600/door-to-door-garbage-collection-500x500.jpg" alt="Garbage Collection">
+    <img src="https://www.hindustantimes.com/ht-img/img/2023/04/16/550x309/Haryana-CM-Manohar-Lal-Khattar-was-apprised-of-a-p_1681671881544.jpg" alt="Garbage Awareness">
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TrashTrack</p>
+  </footer>
+
+  <script>
+    let isLoggedIn = false;
+
+    function signIn() {
+      window.location.href = "signin.html";
+    }
+
+    function showProfile() {
+      const section = document.getElementById("userSection");
+      section.innerHTML = `
+        <a href="profile.html">
+          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" 
+               alt="Profile" class="profile-icon">
+        </a>`;
+    }
+
+window.onload = () => {
+  const loggedIn = localStorage.getItem("loggedIn");
+  if (loggedIn === "true") {
+    showProfile();
+  }
+};
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation - TrashTrack</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .confirm-card {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .confirm-card h2 {
+      color: #2c7a7b;
+      margin-bottom: 10px;
+    }
+    .confirm-card .icon {
+      font-size: 50px;
+      color: #38a169;
+      margin-bottom: 15px;
+    }
+    .confirm-details p {
+      margin: 6px 0;
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #2c7a7b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #276363;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TrashTrack</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="report.html">Report</a>
+      <a href="status.html">Status</a>
+      <a href="track.html">History</a>
+      <a href="history.html">Track</a>
+     <a href="confirmation.html">Confirmation</a>
+
+
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="confirm-card">
+      <div class="icon">✅</div>
+      <h2>Report Submitted!</h2>
+      <div id="confirmationMsg" class="confirm-details">
+      </div>
+      <a href="history.html" class="btn">Go to History</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TrashTrack</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
